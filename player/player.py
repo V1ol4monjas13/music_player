@@ -50,6 +50,7 @@ class MusicPlayer:
         if not os.path.exists(self.music_folder):
             messagebox.showerror("Error", f"No se encontró la carpeta: {self.music_folder}")
             return
+        self.playlist = []  # Limpiar la lista antes de cargarla
         for file in os.listdir(self.music_folder):
             if file.endswith(".mp3"):
                 full_path = os.path.join(self.music_folder, file)
@@ -94,6 +95,7 @@ class MusicPlayer:
                         self.song_listbox.delete(0, END)
                         for song in self.playlist:
                             self.song_listbox.insert(END, song)
+                        self.play_song()  # Reproducir la canción automáticamente después de la descarga
                     else:
                         messagebox.showerror("Error", "No se pudo descargar la canción. Verifica la URL o tu conexión.")
                 except Exception as e:
