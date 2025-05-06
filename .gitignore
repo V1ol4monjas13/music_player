@@ -1,8 +1,13 @@
 # Ignorar carpetas y archivos generados automáticamente
 __pycache__/
+musica_reproducccion/
+*.mp3
+*.webm
+*.zip
 *.pyc
 *.log
 *.tmp
+
 
 # Archivos de entorno
 .env
